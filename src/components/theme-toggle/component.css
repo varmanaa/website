@@ -1,0 +1,38 @@
+.theme-toggle {
+  border-radius: 14px;
+  height: 28px;
+  transition: border 250ms;
+  width: 60px;
+}
+
+.theme-toggle[aria-pressed] {
+  border: 1px solid var(--foreground);
+}
+
+.theme-toggle[aria-pressed=true] {
+  border: 1px solid var(--foreground);
+}
+
+.theme-toggle[aria-pressed]::before {
+  background: url('../../assets/images/sun.svg');
+  border-radius: 50%;
+  content: '';
+  height: 24px;
+  left: 25%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+}
+
+.theme-toggle[aria-pressed=true]::before {
+  background: url('../../assets/images/moon.svg');
+  border-radius: 50%;
+  content: '';
+  height: 24px;
+  left: 75%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+}

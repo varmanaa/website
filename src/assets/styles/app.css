@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+
+html,
+html[data-time="light"] {
+  --background: #FFFFFF;
+  --foreground: #000000;
+}
+
+html[data-theme="dark"] {
+  --background: #000000;
+  --foreground: #FFFFFF;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background 250ms;
+}
