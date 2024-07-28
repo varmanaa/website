@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-aria-components": "^1.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@tailwindcss/postcss": "^4.0.0-alpha.17",
+    "@types/node": "20.14.11",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "tailwindcss": "^4.0.0-alpha.17",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "format": "npx @biomejs/biome format --write *",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "type": "module"
+}

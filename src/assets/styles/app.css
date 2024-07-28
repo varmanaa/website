@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+:root,
+:root[data-theme="light"] {
+  --backdrop: #E3E5E8;
+  --background: #F2F3F5;
+  --foreground: #4E5058;
+  --presence-icon-radius: 8px;
+  --tooltip-background: #FFFFFF;
+  --tooltip-foreground: #313338;
+}
+
+:root[data-theme="dark"] {
+  --backdrop: #1E1F22;
+  --background: #2B2D31;
+  --foreground: #B5BAC1;
+  --presence-icon-radius: 8px;
+  --tooltip-background: #111214;
+  --tooltip-foreground: #DBDEE1;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background 250ms;
+}
+
+.dnd-status {
+  background-color: #EC3E41;
+  border-radius: var(--presence-icon-radius);
+  display: inline-block;
+  height: calc(2 * var(--presence-icon-radius));
+  position: relative;
+  width: calc(2 * var(--presence-icon-radius));
+}
+
+.dnd-status::before {
+  background-color: var(--background);
+  border-radius: 4px;
+  content: '';
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0.7);
+  width: calc(2 * var(--presence-icon-radius));
+}
+
+.idle-status {
+  background-color: #E7AB30;
+  border-radius: var(--presence-icon-radius);
+  display: inline-block;
+  height: calc(2 * var(--presence-icon-radius));
+  position: relative;
+  width: calc(2 * var(--presence-icon-radius));
+}
+
+.idle-status::before {
+  background-color: var(--background);
+  border-radius: calc(1.5 * var(--presence-icon-radius));
+  content: '';
+  height: calc(1.5 * var(--presence-icon-radius));
+  left: -50%;
+  position: absolute;
+  top: -50%;
+  transform: translateX(50%) translateY(50%);
+  width: calc(1.5 * var(--presence-icon-radius));
+}
+
+.offline-status {
+  background-color: var(--background);
+  border: calc(var(--presence-icon-radius) / 2) solid #80848E;
+  border-radius: var(--presence-icon-radius);
+  display: inline-block;
+  height: calc(2 * var(--presence-icon-radius));
+  width: calc(2 * var(--presence-icon-radius));
+}
+
+.online-status {
+  background-color: #23A55A;
+  border-radius: var(--presence-icon-radius);
+  display: inline-block;
+  height: calc(2 * var(--presence-icon-radius));
+  width: calc(2 * var(--presence-icon-radius));
+}
+
+:root:not([data-theme="dark"]) .fancy-box-shadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.multiline-ellipsis {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
